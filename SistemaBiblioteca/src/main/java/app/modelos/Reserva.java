@@ -7,26 +7,26 @@ public class Reserva {
 	private int id;
 	private Cliente cliente;
 	private Libro libro;
-	private Empleado empleado;
 	private LocalDate fecha;
+	private LocalDate fechaLimite;
 	
 	//Iniciador
 	public Reserva() {
 		id = 0;
 		cliente = new Cliente();
 		libro = new Libro();
-		empleado = new Empleado();
 		fecha = LocalDate.now();
+		fechaLimite = LocalDate.now();
 	}
 	
 	//Constructor
-	public Reserva(int id, Cliente cliente, Libro libro, Empleado empleado, LocalDate fecha) {
+	public Reserva(int id, Cliente cliente, Libro libro, LocalDate fecha, LocalDate fechaLimite) {
 		super();
 		this.id = id;
 		this.cliente = cliente;
 		this.libro = libro;
-		this.empleado = empleado;
 		this.fecha = fecha;
+		this.fechaLimite = fechaLimite;
 	}
 	
 	//Metodos de acceso
@@ -54,20 +54,20 @@ public class Reserva {
 		this.libro = libro;
 	}
 
-	public Empleado getEmpleado() {
-		return empleado;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
-	}
-
 	public LocalDate getFecha() {
 		return fecha;
 	}
 
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
+	}
+	
+	public LocalDate getFechaLimite() {
+		return fechaLimite;
+	}
+
+	public void setFechaLimite(LocalDate fechaLimite) {
+		this.fechaLimite = fechaLimite;
 	}
 	
 	

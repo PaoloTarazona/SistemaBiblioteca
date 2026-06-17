@@ -2,35 +2,38 @@ package app.modelos;
 
 public class Cliente {
 	//Atributos
-	private int id;
+	private String dni;
 	private String nombre;
 	private String apellido;
 	private String correo;
+	private String telefono;
 	
 	//Iniciador
 	public Cliente() {
-		id = 0;
+		dni = "";
 		nombre = "";
 		apellido = "";
 		correo = "";
+		telefono = "";
 	}
 	
 	//Constructor
-	public Cliente(int id, String nombre, String apellido, String correo) {
+	public Cliente(String dni, String nombre, String apellido, String correo, String telefono) {
 		super();
-		this.id = id;
+		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.correo = correo;
+		this.telefono = telefono;
 	}
 	
 	//Metodos de acceso
-	public int getId() {
-		return id;
+	public String getDni() {
+		return dni;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public String getNombre() {
@@ -55,6 +58,19 @@ public class Cliente {
 
 	public void setCorreo(String correo) {
 		this.correo = correo;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+	
+	@Override
+	public String toString() {
+		return "[" + dni + "] " + nombre;
 	}
 	
 	

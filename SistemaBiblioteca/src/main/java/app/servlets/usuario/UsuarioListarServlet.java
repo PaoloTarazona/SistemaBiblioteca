@@ -7,35 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class UsuarioListarServlet
- */
-@WebServlet("/Usuario/Listar")
+import app.data.UsuarioDAO;
+
+@WebServlet("/Inicio/Usuario/Listar")
 public class UsuarioListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UsuarioDAO usuarioDAO;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UsuarioListarServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        usuarioDAO = new UsuarioDAO();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("listaUsuarios", usuarioDAO.obtenerTodo());
+		request.getRequestDispatcher("/WEB-INF/usuario/listar.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

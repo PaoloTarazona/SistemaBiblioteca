@@ -7,35 +7,48 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LibroEditarServlet
- */
-@WebServlet("/Libro/Editar")
+import app.data.LibroDAO;
+import app.modelos.Libro;
+
+@WebServlet("/Inicio/Libro/Editar")
 public class LibroEditarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private LibroDAO libroDAO;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public LibroEditarServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        libroDAO = new LibroDAO();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		int id = Integer.parseInt(request.getParameter("id"));
+		request.setAttribute("libro", libroDAO.buscarPorId(id));
+		request.setAttribute("listaLibro", libroDAO.obtenerTodo());
+		request.getRequestDispatcher("/WEB-INF/libro/editar.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		int id = Integer.parseInt(request.getParameter("id"));
+		String titulo = request.getParameter("titulo");
+		String autor = request.getParameter("autor");
+		String categoria = request.getParameter("categoria");
+		int stock = Integer.parseInt(request.getParameter("stock"));
+		
+		Libro libro = new Libro(
+				id, titulo, autor, categoria, stock
+		);
+		
+		boolean ok = libroDAO.actualizar(libro);
+		
+		request.setAttribute("ok", ok);
+		request.setAttribute("titulo", ok ? "Libro Actualizado" : "Error al actualizar!");
+		request.setAttribute("mensaje", ok ? "El Libro se actualizo correctamente." : "Codigo de error: 103");
+		
+		request.setAttribute("libro", libro);
+		request.setAttribute("listaLibro", libroDAO.obtenerTodo());
+		request.getRequestDispatcher("/WEB-INF/libro/editar.jsp").forward(request, response);
 	}
 
 }

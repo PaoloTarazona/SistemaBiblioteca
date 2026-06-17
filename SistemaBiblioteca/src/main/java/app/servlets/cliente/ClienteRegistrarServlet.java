@@ -7,35 +7,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ClienteRegistrarServlet
- */
-@WebServlet("/Cliente/Registrar")
+import app.data.ClienteDAO;
+import app.modelos.Cliente;
+
+@WebServlet("/Inicio/Cliente/Registrar")
 public class ClienteRegistrarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private ClienteDAO clienteDAO;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ClienteRegistrarServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        clienteDAO = new ClienteDAO();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("listaClientes", clienteDAO.obtenerTodo());
+		request.getRequestDispatcher("/WEB-INF/cliente/registrar.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+        request.setAttribute("listaCliente", clienteDAO.obtenerTodo());	
+        
+        String dni = request.getParameter("dni");
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String correo = request.getParameter("correo");
+		String telefono = request.getParameter("telefono");
+		
+		Cliente cliente = new Cliente(
+				dni, nombre, apellido, correo,
+				telefono
+		);
+		
+		int mensajed = clienteDAO.registrar(cliente);
+        boolean ok = mensajed > 0;
+		request.setAttribute("ok", ok);
+		request.setAttribute("nombre", ok ? "Cliente Registrado" : "Error al Registrar");
+		request.setAttribute("mensaje", ok ? "El cliente fue registrado correctamente" : "Codigo dde error: 103");
+		
+		request.getRequestDispatcher("/WEB-INF/cliente/registrar.jsp").forward(request, response);
 	}
 
 }

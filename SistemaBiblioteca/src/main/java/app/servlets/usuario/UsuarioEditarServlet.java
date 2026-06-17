@@ -7,35 +7,55 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class UsuarioEditarServlet
- */
-@WebServlet("/Usuario/Editar")
+import app.data.RolDAO;
+import app.data.UsuarioDAO;
+import app.modelos.Rol;
+import app.modelos.Usuario;
+
+@WebServlet("/Inicio/Usuario/Editar")
 public class UsuarioEditarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private UsuarioDAO usuarioDAO;
+	private RolDAO rolDAO;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UsuarioEditarServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        usuarioDAO = new UsuarioDAO();
+        rolDAO = new RolDAO();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setCharacterEncoding("UTF-8");
+		int id = Integer.parseInt(request.getParameter("id"));
+		request.setAttribute("usuario", usuarioDAO.buscarPorId(id));
+		request.setAttribute("lsRol", rolDAO.obtenerTodo());
+		request.getRequestDispatcher("/WEB-INF/usuario/editar.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setAttribute("lsRol", rolDAO.obtenerTodo());
+        
+		int id = Integer.parseInt(request.getParameter("id"));
+        String nombreUsuario = request.getParameter("nombreUsuario");
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String contrasena = request.getParameter("contrasena");
+		int rolId = Integer.parseInt(request.getParameter("rolId"));
+
+        Usuario usuario = new Usuario(
+        	id, nombreUsuario, nombre, apellido, contrasena,
+        	new Rol(rolId, "")
+        );
+        
+        boolean ok = usuarioDAO.actualizar(usuario);
+		
+		request.setAttribute("ok", ok);
+		request.setAttribute("titulo", ok ? "Usuario Actualizado" : "Error al actualizar!");
+		request.setAttribute("mensaje", ok ? "El Usuario se actualizo correctamente." : "Codigo de error: 103");
+
+		request.setAttribute("usuario", usuario);
+		request.setAttribute("listaUsuario", usuarioDAO.obtenerTodo());
+        request.getRequestDispatcher("/WEB-INF/usuario/editar.jsp").forward(request, response);
 	}
 
 }

@@ -1,122 +1,90 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es-PE">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Inicio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
-<body class="bg-dark text-white">
+<body class="bg-light">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
-        <div class="container-fluid">
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand fw-bold">Sistema Biblioteca</span>
 
-            <a class="navbar-brand fw-bold" href="#">
-                Sistema de Biblioteca
-            </a>
+        <a href="<%= request.getContextPath() %>/Logout" class="btn btn-outline-light">Cerrar sesión</a>
+    </div>
+</nav>
 
-            <div class="d-flex">
-                <a href="logout" class="btn btn-outline-light">
-                    Cerrar Sesión
-                </a>
+<!-- CONTENIDO -->
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">MENÚ PRINCIPAL</h2>
+        <p class="text-muted">Seleccione un módulo</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+
+        <!-- CLIENTES -->
+        <div class="col-md-3">
+            <div class="card text-center shadow rounded-4">
+                <div class="card-body py-5">
+
+                    <div class="display-4 mb-3">🙋‍♂️</div>
+
+                    <h4 class="fw-bold mb-3">Clientes</h4>
+
+                    <a href="Inicio/Cliente" class="btn btn-primary w-100">
+                        Entrar
+                    </a>
+
+                </div>
             </div>
-
         </div>
-    </nav>
 
-    <!-- Contenido Principal -->
-    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <!-- LIBROS -->
+        <div class="col-md-3">
+            <div class="card text-center shadow rounded-4">
+                <div class="card-body py-5">
 
-        <div class="row g-4 w-100 justify-content-center">
+                    <div class="display-4 mb-3">📚</div>
 
-            <!-- Libros -->
-            <div class="col-md-4 col-lg-3">
-                <div class="card bg-secondary text-white border-0 shadow-lg h-100">
+                    <h4 class="fw-bold mb-3">Libros</h4>
 
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-5">
-
-                        <div class="display-1 mb-3">
-                            📚
-                        </div>
-
-                        <h3 class="card-title mb-3">
-                            Libros
-                        </h3>
-
-                        <p class="card-text mb-4">
-                            Gestión y administración de libros.
-                        </p>
-
-                        <a href="libros" class="btn btn-light w-100">
-                            Ir a Libros
-                        </a>
-
-                    </div>
+                    <a href="Inicio/Libro" class="btn btn-primary w-100">
+                        Entrar
+                    </a>
 
                 </div>
             </div>
+        </div>
 
-            <!-- Reservas -->
-            <div class="col-md-4 col-lg-3">
-                <div class="card bg-secondary text-white border-0 shadow-lg h-100">
+        <!-- RESERVAS -->
+        <div class="col-md-3">
+            <div class="card text-center shadow rounded-4">
+                <div class="card-body py-5">
 
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-5">
+                    <div class="display-4 mb-3">📅</div>
 
-                        <div class="display-1 mb-3">
-                            📝
-                        </div>
+                    <h4 class="fw-bold mb-3">Reservas</h4>
 
-                        <h3 class="card-title mb-3">
-                            Reservas
-                        </h3>
-
-                        <p class="card-text mb-4">
-                            Control y seguimiento de reservas.
-                        </p>
-
-                        <a href="reservas" class="btn btn-light w-100">
-                            Ir a Reservas
-                        </a>
-
-                    </div>
+                    <a href="Inicio/Reserva" class="btn btn-primary w-100">
+                        Entrar
+                    </a>
 
                 </div>
             </div>
-
-            <!-- Clientes -->
-            <div class="col-md-4 col-lg-3">
-                <div class="card bg-secondary text-white border-0 shadow-lg h-100">
-
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-5">
-
-                        <div class="display-1 mb-3">
-                            👥
-                        </div>
-
-                        <h3 class="card-title mb-3">
-                            Clientes
-                        </h3>
-
-                        <p class="card-text mb-4">
-                            Administración de clientes registrados.
-                        </p>
-
-                        <a href="clientes" class="btn btn-light w-100">
-                            Ir a Clientes
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-
         </div>
 
     </div>
 
-    <!-- Bootstrap 5.3.8 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
