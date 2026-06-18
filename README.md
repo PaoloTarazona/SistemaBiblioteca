@@ -19,7 +19,10 @@ El sistema permite administrar usuarios, libros, clientes y reservas de préstam
 
 # Funcionalidad
 - Inicio de sesion con control de acceso por rol
-- CRUD completo de
--
--
--
+- CRUD completo (registrar, listar, buscar, editar, eliminar) para usuarios, libros, clientes y reservas.
+- Busqueda de clientes por DNI y usuario por rol
+- Validaciones de formulario en el cliente con JQuery Validate.
+- Confirmaciones y notificaciones visuales con SweetAlert2.
+- Procedimientos almacenados en MySQL para las consultas con relaciones entre tablas.
+
+# Como ejecutar el Proyecto
