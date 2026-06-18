@@ -32,12 +32,12 @@ Requisitos previos
 - Eclipse IDE for Enterprise Java and Web Developers 2026-03
 - MySQL 8 + MySQL Workbench
 
-1. Configurar la base de datos
-a. Abre MySQL Workbench y conéctate a tu servidor local.
-b. Abre el archivo Base de Datos/sistema_biblioteca.sql.
-c. Ejecuta el script completo. Esto creará la base de datos, las tablas, los procedimientos almacenados e insertará datos de prueba.
-d. Verifica que la base de datos sistema_biblioteca fue creada correctamente.
+Configurar la base de datos
+- Abre MySQL Workbench y conéctate a tu servidor local.
+- Abre el archivo Base de Datos/sistema_biblioteca.sql.
+- Ejecuta el script completo. Esto creará la base de datos, las tablas, los procedimientos almacenados e insertará datos de prueba.
+- Verifica que la base de datos sistema_biblioteca fue creada correctamente.
 
-2. Configurar la conexión en el proyecto
+**Configurar la conexión en el proyecto**
 Una vez abierto el proyecto en Eclipse, debemos ir al package app.config y abrir la clase MySQLConexion.java. Ahí debemos cambiar las credenciales por las que tenemos configuradas en nuestro MySQL.
 <img width="597" height="49" alt="image" src="https://github.com/user-attachments/assets/3af55740-4604-47f1-971a-fc7a73d60fa0" />
