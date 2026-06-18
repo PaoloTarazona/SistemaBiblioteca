@@ -68,6 +68,34 @@ Una vez abierto el proyecto en Eclipse, debemos ir al package app.config y abrir
 | admin   | 1234       | Administrador |
 | paolo   | 1234       | Bibliotecario |
 
+# Capturas del sistema
+
+**Login**
+<img width="1094" height="514" alt="image" src="https://github.com/user-attachments/assets/4e20a065-c59c-4c50-bd61-d958f2107a69" />
+
+**Inicio Admin**
+<img width="1918" height="564" alt="image" src="https://github.com/user-attachments/assets/0adca6f4-c54e-47c3-8ca3-f19d2153ad7f" />
+
+**Inicio Bibliotecario**
+<img width="1919" height="590" alt="image" src="https://github.com/user-attachments/assets/4e566c67-cf16-4b69-b105-8a279406f4c4" />
+
+**Menu Reserva**
+<img width="1919" height="561" alt="image" src="https://github.com/user-attachments/assets/ea4856d1-c335-44d5-884a-5712f621b812" />
+
+**Listado Reserva**
+<img width="1919" height="403" alt="image" src="https://github.com/user-attachments/assets/dee98585-fc46-4f45-adb6-39bbb3265b10" />
+
+**Registro Reserva**
+<img width="1919" height="595" alt="image" src="https://github.com/user-attachments/assets/b9cfc4fa-d73c-476e-9ae2-9071a57088f1" />
+
+**Buscar Reserva**
+<img width="1918" height="427" alt="image" src="https://github.com/user-attachments/assets/978a45da-b493-4133-9d2e-d129917a46ae" />
+
+**Editar Reserva**
+<img width="1919" height="669" alt="image" src="https://github.com/user-attachments/assets/8c35c186-6d24-4931-82fc-07ffff25456b" />
+
+
+
 
 
 
