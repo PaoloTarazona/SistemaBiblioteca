@@ -1,2 +1,2 @@
-# Sistema-Gestion-Biblioteca
-Sistema CRUD de gestión de biblioteca con Java Servlets, DAO y MySQL
+# Sistema Gestion de Biblioteca
+Sistema web para la gestión de préstamos de libros en una biblioteca, desarrollado con Java Servlets, JSP y MySQL siguiendo el patrón DAO.
