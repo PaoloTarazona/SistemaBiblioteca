@@ -32,35 +32,35 @@ El sistema permite administrar usuarios, libros, clientes y reservas de préstam
 - Eclipse IDE for Enterprise Java and Web Developers 2026-03
 - MySQL 8 + MySQL Workbench
 
-**Configurar la base de datos**
+2. **Configurar la base de datos**
 - Abre MySQL Workbench y conéctate a tu servidor local.
 - Abre el archivo Base de Datos/sistema_biblioteca.sql.
 - Ejecuta el script completo. Esto creará la base de datos, las tablas, los procedimientos almacenados e insertará datos de prueba.
 - Verifica que la base de datos sistema_biblioteca fue creada correctamente.
 
-**Importar el proyecto a Eclipse**
+3. **Importar el proyecto a Eclipse**
 - Abre Eclipse IDE for Enterprise Java and Web Developers.
 - Ve a File → Import → Existing Projects into Workspace.
 - Selecciona la carpeta SistemaBiblioteca del repositorio clonado.
 - Haz clic en Finish.
 
-**Configurar la conexión en el proyecto**
+4. **Configurar la conexión en el proyecto**
 
 Una vez abierto el proyecto en Eclipse, debemos ir al package app.config y abrir la clase MySQLConexion.java. Ahí debemos cambiar las credenciales por las que tenemos configuradas en nuestro MySQL.
 
 <img width="597" height="49" alt="image" src="https://github.com/user-attachments/assets/3af55740-4604-47f1-971a-fc7a73d60fa0" />
 
-**Configurar Apache Tomcat 9**
+5. **Configurar Apache Tomcat 9**
 - En Eclipse ve a Window → Preferences → Server → Runtime Environments.
 - Haz clic en Add y selecciona Apache Tomcat v9.0.
 - Indica la ruta donde tienes instalado Tomcat y guarda.
 
-**Ejecutar el Proyecto**
+6. **Ejecutar el Proyecto**
 - Clic derecho en el proyecto → Run As → Run on Server.
 - Selecciona el servidor Tomcat 9 configurado.
 - Se le deberia abrir la pagina en su navegador automaticamente, si no es asi puede ingresar con el siguente link: http://localhost:8080/SistemaBiblioteca/Login
 
-**Usuarios para probar el sistema**
+7. **Usuarios para probar el sistema**
 
 | Usuario | Contraseña | Rol           |
 |---------|------------|---------------|
