@@ -27,7 +27,7 @@ El sistema permite administrar usuarios, libros, clientes y reservas de préstam
 
 # Como ejecutar el Proyecto
 
-**Requisitos previos**
+1. **Requisitos previos**
 - Java JDK 8 o superior
 - Eclipse IDE for Enterprise Java and Web Developers 2026-03
 - MySQL 8 + MySQL Workbench
