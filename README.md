@@ -1,2 +1,2 @@
-# Sistema-Gestion-Empleados
+# Sistema-Gestion-Biblioteca
 Sistema CRUD de gestión de biblioteca con Java Servlets, DAO y MySQL
