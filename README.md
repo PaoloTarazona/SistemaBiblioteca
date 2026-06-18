@@ -1,14 +1,14 @@
-# Sistema Gestion de Biblioteca
+# Sistema Gestion de Biblioteca 📚
 Sistema web para la gestión de préstamos de libros en una biblioteca, desarrollado con Java Servlets, JSP y MySQL siguiendo el patrón DAO.
 
 
-# Descripción
+# Descripción 📋
 El sistema permite administrar usuarios, libros, clientes y reservas de préstamo. Cuenta con autenticación y dos roles diferenciados:
 - Administrador: gestiona los usuarios del sistema (CRUD de usuarios).
 - Bibliotecario: gestiona el catálogo de libros, los clientes de la biblioteca y las reservas de préstamo (CRUD de libros, clientes y reserva
 
 
-# Tecnologias Usadas
+# Tecnologias Usadas 💻
 - MySQL
 - Java (Servlets, JSP)
 - Eclipse IDE for Enterprise Java and Web Developers
@@ -17,7 +17,7 @@ El sistema permite administrar usuarios, libros, clientes y reservas de préstam
 - SweetAlert2
 - Apache Tomcat 9
 
-# Funcionalidad
+# Funcionalidad 💡
 - Inicio de sesion con control de acceso por rol
 - CRUD completo (registrar, listar, buscar, editar, eliminar) para usuarios, libros, clientes y reservas.
 - Busqueda de clientes por DNI y usuario por rol
@@ -25,7 +25,7 @@ El sistema permite administrar usuarios, libros, clientes y reservas de préstam
 - Confirmaciones y notificaciones visuales con SweetAlert2.
 - Procedimientos almacenados en MySQL para las consultas con relaciones entre tablas.
 
-# Como ejecutar el Proyecto
+# Como ejecutar el Proyecto 📦
 Aca le mostrare los pasos a seguir para poder ejecutar el proyecto.
 
 ## **Requisitos previos**
@@ -68,7 +68,7 @@ Una vez abierto el proyecto en Eclipse, debemos ir al package app.config y abrir
 | admin   | 1234       | Administrador |
 | paolo   | 1234       | Bibliotecario |
 
-# Capturas del sistema
+# Capturas del sistema 📸
 
 **Login**
 <img width="1094" height="514" alt="image" src="https://github.com/user-attachments/assets/4e20a065-c59c-4c50-bd61-d958f2107a69" />
